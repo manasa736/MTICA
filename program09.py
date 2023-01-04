@@ -1,7 +1,13 @@
-print(len('george'))
-print(len(' tom  '))
-s="""hi
-sis!"""
-print(len(s))
+def squares(x=0):
+    while x < 10:
+        x = x + 1
+        yield x*x
+
+##yieldedList=[i for i in squares()]
+##print(yieldedList)
 
 
+#Mterialise list from generator using list()
+
+yieldedList = list(squares())
+print(yieldedList)

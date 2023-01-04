@@ -1,14 +1,11 @@
-'''z=2
-z=z**2**3
-print(z)
-x=6
-x=x**2+6-z//10*2
-print(x)'''
-
-print("hello world")
-x=8
-y=10
-print("value of x is",x,"value of y is",y)
+##s=input()
+##s.split()
+##print(len(s))
 
 
+def solveProblem(s):
+    lst=s.split()
+    return [len(i) for i in lst]
 
+inp=input()
+print(*solveProblem(inp))

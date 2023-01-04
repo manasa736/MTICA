@@ -1,5 +1,16 @@
-#x=input('enter an integer ==>'),sep=''
-x=int(input('enter an integer==>'))
-y=x//10
-z=y%10
-print(x,',',y,z,sep=' ')
+x=5;y=7
+def changeMe(mylist):
+    "this function demonstrates local and global variables"
+    p=89
+    global x,y
+    x=y+2
+    mylist = [1,2,3,4]
+
+    print("values inside the function:",mylist)
+    print("local variables are:",locals())
+    print("global variables are:",globals())
+    return
+
+mylist_var = [10,20,30]
+changeMe(mylist_var)
+print("values outside the function:",mylist_var)
