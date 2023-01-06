@@ -1,11 +1,9 @@
-def gen_int(n):
-    for i in range(n):
-        yield i
-def gen_2(gen):
-    for n in gen:
-        if n%2:
-            yield n
+def outer():
+    message = 'outer function'
+    print(message)
 
-
-for i in gen_2(gen_int(10)):
-    print(i)
+    def inner():
+        print(message)
+    inner()
+    
+outer()

@@ -1,10 +1,22 @@
-def sum_num(x):
-    res=0
-    for i in range(x+1):
-        res=res+i
-        yield("i=",i,"res=",res)
-    return res
+def findFactor(n):
+    temp=[]
+    for i in range(1,n+1):
+        if n%i==0:
+            temp.append(i)
+    return temp
 
-##ob=sum_num(10)
-##for i in range(11):
-##    print(next(ob))
+
+def findGCD(n1,n2):
+    lstn1=findFactor(n1)
+    lstn2=findFactor(n2)
+    s1=set(lstn1)
+    s2=set(lstn2)
+    ans=list(s1.intersection(s2))
+    ans.sort()
+    return ans[-1]
+
+print("enter two numbers")
+a = int(input())
+b = int(input())
+
+print(findGCD(a,b))

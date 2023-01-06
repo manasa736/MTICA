@@ -1,17 +1,17 @@
-def sum_series(a,b):
-    assert (a<b),"first argument should be smaller than second"
-    total=0
-    for i in range(a,b,1):
-        total=total +i
-        yield total
-
-n1=int(input())
-n2=int(input())
-ob=sum_series(n1,n2)
-x=0
-try:
-    while x<10:
-        print(next(ob))
-        x=x+1
-except AssertionError as ae:
-    print(ae)
+from math import sqrt
+def checkPrime(n):
+    if n==1 or n==2 or n==3:
+        return n
+    for i in range(2,int(sqrt(n))+1):
+        if n%i==0:
+            return None
+    return n
+def findPrimeFactor(n):
+    temp=[]
+    for i in range(1,n+1):
+        if n%i==0:
+            if checkPrime(i):
+                temp.append(i)
+    return temp
+a=int(input())
+print(*findPrimeFactor(a))

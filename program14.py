@@ -1,5 +1,11 @@
-
-
-with open(r'C:\Users\User\Desktop\python\day9\123.txt')as fo:
-    temp=fo.read()
-    print(temp)
+message = 'outer scope'
+def outer():
+    message='demo'
+    print(message)
+    def inner():
+        nonlocal message
+        message = 'inner scope'
+        print(message)
+    inner()
+    print(message)
+outer()

@@ -1,13 +1,11 @@
-def squares(x=0):
-    while x < 10:
-        x = x + 1
-        yield x*x
+def f():
 
-##yieldedList=[i for i in squares()]
-##print(yieldedList)
+    x=10
+    print('id(x)in f outer:',id(x))
+    def g():
+        x = 15
+        print('id(x)in g outer:',id(x))
+    g()
+    print(x)
 
-
-#Mterialise list from generator using list()
-
-yieldedList = list(squares())
-print(yieldedList)
+f()

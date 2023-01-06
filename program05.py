@@ -1,10 +1,17 @@
-def demo_yield():
-    print("code segment1 executed")
-    x=7
-    yield x*x
-    print("code segment2 executed")
-    yield 2
-    print("code segment1 executed")
-    yield 3
-    print("code segment4 executed")
-    
+def findLCM(n1,n2):
+    if n1<0 or n2<0:
+        return "INVALID"
+    if n1>n2:
+        n1,n2=n2,n1
+    i=n2
+    while True:
+        if i%n1==0 and i%n2==0:
+            return i
+        else:
+            i+=1
+    return None
+print("enter two numbers:")
+a=int(input())
+b=int(input())
+print(findLCM(a,b))
+        

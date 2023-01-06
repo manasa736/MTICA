@@ -1,25 +1,15 @@
-def printAdd(a,b):
-    return a+b
-def printSub(a,b):
-    return a-b
-def printMult(a,b):
-    return a*b
-def printDiv(a,b):
-    return a/b
-def choice():
-    print("+:Addition"); print("-:Subtraction");
-    print("*:Multiplication");
-    print("/:Division"); print("q:Quit")
-    return
-ColorSelect={"+":printAdd, "-":printSub, "*":printMult, "/":printDiv}
-while True:
-    choice()
-    selection=input("select an arithmatic operation:")
-    if selection=='q' or selection=='Q':break
-    if ((selection=='+') or (selection=='-')or
-    (selection=='*')or  (selection=='/')):
-        n1=int(input("enter first no:"))
-        n2=int(input("enter second no:"))
-        z=ColorSelect[selection](n1,n2)
-        print(n1,selection,n2,'=',z)
+class Vehicle:
+    def __init__(self,name,max_speed,mileage):
+        self.name=name
+        self.max_speed=max_speed
+        self.mileage=mileage
 
+    def seating_capacity(self,capacity):
+        return f"The seating capacity of a {self.name} is {capacity} passengers"
+
+class Bus(Vehicle):
+    def seating_capacity(self,capacity=50):
+        return super().seating_capacity(capacity=50)
+
+School_bus = Bus("School Volvo", 120,18)
+print(School_bus.seating_capacity())
